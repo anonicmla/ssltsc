@@ -1,0 +1,8 @@
+#!/bin/bash
+#SBATCH --partition=gpu
+#SBATCH --job-name=self_fordb
+#SBATCH --output=/data/beegfs/home/gos/self_fordb_out
+#SBATCH --error=/data/beegfs/home/gos/self_fordb_error
+#SBATCH -D /data/beegfs/home/gos/sslts/experiments
+#SBATCH --gres=gpu:tesla:1
+~/miniconda3/envs/sslts_env/bin/python /data/beegfs/home/gos/sslts/experiments/tune.py --mlflow_name selfsup --time_budget 360000 --dataset fordb --config config_files/selfsupervised.yaml

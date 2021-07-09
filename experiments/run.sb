@@ -1,0 +1,8 @@
+#!/bin/bash
+#SBATCH --partition=gpu
+#SBATCH --job-name=train_mm
+#SBATCH --output=/data/beegfs/home/gos/out_train_mm_pamap2
+#SBATCH --error=/data/beegfs/home/gos/error_train_mm_pamap2
+#SBATCH -D /data/beegfs/home/gos/sslts/experiments
+#SBATCH --gres=gpu:tesla:1
+~/miniconda3/envs/sslts_env/bin/python /data/beegfs/home/gos/sslts/experiments/run.py --mlflow_name dbg --config /data/beegfs/home/gos/sslts/experiments/mlruns/158/14528d55c0a04b0a814929265ea75050/artifacts/best_config.yaml
